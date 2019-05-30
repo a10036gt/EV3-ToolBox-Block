@@ -10,4 +10,4 @@ There is lot of funcs：atan2、Select、Mapping、Max and Min...etc.
 
 使用說明：https://www.ofdl.nctu.me/ev3-hack/ev3-toolbox-block/
 
-User Gudie：https://www.ofdl.nctu.me/en/ev3-hacking/ev3-tool-box-block/
+User Guide：https://www.ofdl.nctu.me/en/ev3-hacking/ev3-tool-box-block/
