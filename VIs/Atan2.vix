@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="X" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
+            <DataItem Name="Y" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
+            <DataItem Name="Result" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" />
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="4" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="X" Id="n1" Bounds="119 49 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w5" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Y" Id="n2" Bounds="119 77 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w4" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Divide Id="n3" Terminals="x\/y=w20, y=w5, x=w4" TopLeft="245 154" />
+                <Wire Id="w4" Joints="N(n2:Value) h(21) v(28) N(b18:n0) B(2) v(49) N(n3:x)" />
+                <Wire Id="w5" Joints="N(n1:Value) h(28) v(7) v(112) N(n3:y) B(2) N(n10:x)" />
+                <CaseStructure Id="n0" Bounds="406 21 497 280" DataType="Boolean" UserSelectorBounds="203.767 0 89.467 14" Selected="d1" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 483 266" Pattern="False">
+                        <Wire Id="w4" Joints="N(b15:d0) N(b16:d0)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="d1" Bounds="7 7 483 266" Pattern="True">
+                        <CaseStructure Id="n19" Bounds="98 42 322 210" DataType="Boolean" UserSelectorBounds="116.267 0 89.467 14" Selected="D22" Default="D21">
+                            <CaseStructure.Case Id="D21" Bounds="7 7 308 196" Pattern="False">
+                                <Add Id="n20" Terminals="x\+y=w9, y=w7, x=w8" TopLeft="140 84" />
+                                <Literal Id="n6" Terminals="Out=w7" Bounds="91 98 35 14" Interpretation="Exact" DataType="Double">180</Literal>
+                                <Wire Id="w7" Joints="N(n6:Out) N(n20:y)" />
+                                <Wire Id="w8" Joints="N(b14:D21) N(n20:x)" />
+                                <Wire Id="w9" Joints="N(n20:x\+y) h(126) v(-7) N(b17:D21)" />
+                            </CaseStructure.Case>
+                            <CaseStructure.Case Id="D22" Bounds="7 7 308 196" Pattern="True">
+                                <Subtract Id="n20" Terminals="x\-y=w8, y=w7, x=w6" TopLeft="133 84" />
+                                <Literal Id="n4" Terminals="Out=w7" Bounds="77 98 35 14" Interpretation="Exact" DataType="Double">180</Literal>
+                                <Wire Id="w6" Joints="N(b14:D22) N(n20:x)" />
+                                <Wire Id="w7" Joints="N(n4:Out) N(n20:y)" />
+                                <Wire Id="w8" Joints="N(n20:x\-y) h(133) v(-7) N(b17:D22)" />
+                            </CaseStructure.Case>
+                            <CaseStructure.Selector Id="b4" Terminals="n19=w10, D21, D22" TopLeft="0 42" />
+                            <CaseStructure.Tunnel Id="b14" Terminals="n19=w14, D21=w8, D22=w6" TopLeft="0 91" />
+                            <CaseStructure.Tunnel Id="b17" Terminals="n19=w17, D21=w9, D22=w8" TopLeft="308 91" />
+                        </CaseStructure>
+                        <IsLess Id="n8" Terminals="x\ \&lt;\ y\?=w10, y=w20, x=w13" TopLeft="63 77" />
+                        <Wire Id="w20" Joints="N(n11:Out) N(n8:y)" />
+                        <Wire Id="w10" Joints="N(n8:x\ \&lt;\ y\?) N(b4:n19)" />
+                        <Literal Id="n11" Terminals="Out=w20" Bounds="21 91 28 14" Interpretation="Exact" DataType="Double">0</Literal>
+                        <Wire Id="w13" Joints="N(b18:d1) N(n8:x)" />
+                        <Wire Id="w14" Joints="N(b15:d1) N(b14:n19)" />
+                        <Wire Id="w17" Joints="N(b17:n19) N(b16:d1)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b6" Terminals="n0=w11, d0, d1" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b15" Terminals="n0=w21, d0=w4, d1=w14" TopLeft="0 140" />
+                    <CaseStructure.Tunnel Id="b16" Terminals="n0=w18, d0=w4, d1=w17" TopLeft="483 140" />
+                    <CaseStructure.Tunnel Id="b18" Terminals="n0=w4, d0, d1=w13" TopLeft="0 84" />
+                </CaseStructure>
+                <IsLess Id="n10" Terminals="x\ \&lt;\ y\?=w11, y=w13, x=w5" TopLeft="364 56" />
+                <Wire Id="w11" Joints="N(n10:x\ \&lt;\ y\?) N(b6:n0)" />
+                <Literal Id="n12" Terminals="Out=w13" Bounds="308 70 28 14" Interpretation="Exact" DataType="Double">0</Literal>
+                <Wire Id="w13" Joints="N(n12:Out) N(n10:y)" />
+                <DataAccessor DataItem="Result" Id="n14" Bounds="952 161 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w18" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w18" Joints="N(b16:n0) N(n14:Value)" />
+                <InverseTangent Id="n19" Terminals="arctan\(x\)=w21, x=w20" TopLeft="294 161" />
+                <Wire Id="w20" Joints="N(n3:x\/y) N(n19:x)" />
+                <Wire Id="w21" Joints="N(n19:arctan\(x\)) N(b15:n0)" />
+            </BlockDiagram>
+            <Icon>
+                <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="70" Width="56">
+                    <fpruntime:AnimationProperties.Animations>
+                        <fpruntime:AnimationsContainer />
+                    </fpruntime:AnimationProperties.Animations>
+                    <fpruntime:EventProperties.Events>
+                        <fpruntime:EventContainer />
+                    </fpruntime:EventProperties.Events>
+                    <Model0:IconPanel.Background>
+                        <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <ation:LinearGradientBrush.Transform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.Transform>
+                            <ation:LinearGradientBrush.RelativeTransform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.RelativeTransform>
+                            <ation:GradientStop Color="#FFF6F5C6" />
+                            <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
+                            <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
+                        </ation:LinearGradientBrush>
+                    </Model0:IconPanel.Background>
+                    <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 13, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                    </ation:Rectangle>
+                    <ation:Rectangle x:Name="Template2" Width="NaN" Height="14" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                        <ation:Rectangle.Fill>
+                            <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <ation:LinearGradientBrush.Transform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.Transform>
+                                <ation:LinearGradientBrush.RelativeTransform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.RelativeTransform>
+                                <ation:GradientStop Color="#FFFFFFFF" />
+                                <ation:GradientStop Color="#FFD5EAEA" Offset="1" />
+                            </ation:LinearGradientBrush>
+                        </ation:Rectangle.Fill>
+                    </ation:Rectangle>
+                    <ation:TextBlock x:Name="Template3" Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, -0.100000001490116, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Text="SubVI" FontFamily="Portable User Interface" FontSize="10" FontWeight="Normal" Foreground="#FF000000">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                    </ation:TextBlock>
+                </Model0:IconPanel>
+            </Icon>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
