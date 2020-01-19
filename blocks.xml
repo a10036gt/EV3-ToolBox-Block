@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorDefinitions>
-  <PolyGroups ModuleName="UsefulTools" ModuleVersion="1.6 (By OFDL Dev.)">
+  <PolyGroups ModuleName="UsefulTools" ModuleVersion="1.7 (By OFDL Dev.)">
     <PolyGroup Name="UsefulTools" BlockFamily="DataOperations">
       <Parameter Name="True" Direction="Input" DataType="Single" DefaultValue="0"  Identification="Identification_True.png"/>
       <Parameter Name="False" Direction="Input" DataType="Single" DefaultValue="0"  Identification="Identification_False.png"/>
@@ -36,6 +36,13 @@
 	  <Block>
         <Mode>Atan2</Mode>
         <Reference Type="VILib" Name="Atan2.vix" />
+		<ParameterReference Name="Y"/>
+        <ParameterReference Name="X"/>
+		<ParameterReference Name="Result"/>
+      </Block>
+	  <Block>
+        <Mode>Atan2_ORG</Mode>
+        <Reference Type="VILib" Name="Atan2_ORG.vix" />
 		<ParameterReference Name="Y"/>
         <ParameterReference Name="X"/>
 		<ParameterReference Name="Result"/>

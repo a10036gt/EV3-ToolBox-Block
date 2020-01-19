@@ -11,81 +11,63 @@
                 <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
-                <DataAccessor DataItem="X" Id="n1" Bounds="217 119 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w48" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                <DataAccessor DataItem="X" Id="n1" Bounds="119 49 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w5" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <DataAccessor DataItem="Y" Id="n2" Bounds="217 105 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w44" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                <DataAccessor DataItem="Y" Id="n2" Bounds="119 77 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w4" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <DataAccessor DataItem="Result" Id="n14" Bounds="805 112 70 14">
-                    <Terminal Id="Value" Direction="Input" Wire="w41" Hotspot="0 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <Wire Id="w41" Joints="N(b38:n22) N(n14:Value)" />
-                <Wire Id="w44" Joints="N(n2:Value) h(28) v(-35) N(b47:n22) B(1) N(n61:x)" />
-                <Wire Id="w47" Joints="N(n45:x\ \.and\.\ y\?) N(b22:n22)" />
-                <Wire Id="w48" Joints="N(n1:Value) h(28) v(35) N(b48:n22) B(1) N(n68:x)" />
-                <Wire Id="w62" Joints="N(n68:x\ \=\ 0\?) N(n45:y)" />
-                <Wire Id="w61" Joints="N(n61:x\ \=\ 0\?) N(n45:x)" />
-                <CaseStructure Id="n22" Bounds="413 0 357 217" DataType="Boolean" UserSelectorBounds="133.767 0 89.467 14" Selected="D24" Default="D24">
-                    <CaseStructure.Case Id="D24" Bounds="7 7 343 203" Pattern="False">
-                        <CaseStructure Id="n48" Bounds="112 14 203 175" DataType="Boolean" UserSelectorBounds="56.767 0 89.467 14" Selected="D50" Default="D50">
-                            <CaseStructure.Case Id="D50" Bounds="7 7 189 161" Pattern="False">
-                                <CaseStructure Id="n65" Bounds="63 28 98 119" DataType="Boolean" UserSelectorBounds="4.267 0 89.467 14" Selected="D68" Default="D67">
-                                    <CaseStructure.Case Id="D67" Bounds="7 7 84 105" Pattern="False">
-                                        <Subtract Id="n62" Terminals="x\-y=w9, y=w7, x=w6" TopLeft="28 49" />
-                                        <Wire Id="w6" Joints="N(b13:D67) N(n62:x)" />
-                                        <Wire Id="w7" Joints="N(b16:D67) N(n62:y)" />
-                                        <Wire Id="w9" Joints="N(n62:x\-y) h(7) v(-7) N(b17:D67)" />
-                                    </CaseStructure.Case>
-                                    <CaseStructure.Case Id="D68" Bounds="7 7 84 105" Pattern="True">
-                                        <Add Id="n62" Terminals="x\+y=w8, y=w7, x=w5" TopLeft="28 49" />
-                                        <Wire Id="w5" Joints="N(b13:D68) N(n62:x)" />
-                                        <Wire Id="w7" Joints="N(b16:D68) N(n62:y)" />
-                                        <Wire Id="w8" Joints="N(n62:x\+y) h(7) v(-7) N(b17:D68)" />
-                                    </CaseStructure.Case>
-                                    <CaseStructure.Selector Id="b5" Terminals="n65=w12, D67, D68" TopLeft="0 14" />
-                                    <CaseStructure.Tunnel Id="b13" Terminals="n65=w13, D67=w6, D68=w5" TopLeft="0 56" />
-                                    <CaseStructure.Tunnel Id="b16" Terminals="n65=w16, D67=w7, D68=w7" TopLeft="0 70" />
-                                    <CaseStructure.Tunnel Id="b17" Terminals="n65=w19, D67=w9, D68=w8" TopLeft="84 56" />
-                                </CaseStructure>
-                                <Wire Id="w11" Joints="N(b21:D50) N(n21:x)" />
-                                <IsGreaterThan0 Id="n21" Terminals="x\ \&gt;\ 0\?=w12, x=w11" TopLeft="21 42" />
-                                <Wire Id="w12" Joints="N(n21:x\ \&gt;\ 0\?) N(b5:n65)" />
-                                <Wire Id="w13" Joints="N(b18:D50) N(b13:n65)" />
-                                <Literal Id="n62" Terminals="Out=w16" Bounds="14 98 35 14" Interpretation="Exact" DataType="Double">180</Literal>
-                                <Wire Id="w16" Joints="N(n62:Out) N(b16:n65)" />
-                                <Wire Id="w19" Joints="N(b17:n65) N(b19:D50)" />
+                <Divide Id="n3" Terminals="x\/y=w20, y=w5, x=w4" TopLeft="245 154" />
+                <Wire Id="w4" Joints="N(n2:Value) h(21) v(28) N(b18:n0) B(2) v(49) N(n3:x)" />
+                <Wire Id="w5" Joints="N(n1:Value) h(28) v(7) v(112) N(n3:y) B(2) N(n10:x)" />
+                <CaseStructure Id="n0" Bounds="406 21 497 280" DataType="Boolean" UserSelectorBounds="203.767 0 89.467 14" Selected="d1" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 483 266" Pattern="False">
+                        <Wire Id="w4" Joints="N(b15:d0) N(b16:d0)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="d1" Bounds="7 7 483 266" Pattern="True">
+                        <CaseStructure Id="n19" Bounds="98 42 322 210" DataType="Boolean" UserSelectorBounds="116.267 0 89.467 14" Selected="D22" Default="D21">
+                            <CaseStructure.Case Id="D21" Bounds="7 7 308 196" Pattern="False">
+                                <Add Id="n20" Terminals="x\+y=w9, y=w7, x=w8" TopLeft="140 84" />
+                                <Literal Id="n6" Terminals="Out=w7" Bounds="91 98 35 14" Interpretation="Exact" DataType="Double">180</Literal>
+                                <Wire Id="w7" Joints="N(n6:Out) N(n20:y)" />
+                                <Wire Id="w8" Joints="N(b14:D21) N(n20:x)" />
+                                <Wire Id="w9" Joints="N(n20:x\+y) h(126) v(-7) N(b17:D21)" />
                             </CaseStructure.Case>
-                            <CaseStructure.Case Id="D51" Bounds="7 7 189 161" Pattern="True">
-                                <Wire Id="w4" Joints="N(b18:D51) N(b19:D51)" />
+                            <CaseStructure.Case Id="D22" Bounds="7 7 308 196" Pattern="True">
+                                <Subtract Id="n20" Terminals="x\-y=w8, y=w7, x=w6" TopLeft="133 84" />
+                                <Literal Id="n4" Terminals="Out=w7" Bounds="77 98 35 14" Interpretation="Exact" DataType="Double">180</Literal>
+                                <Wire Id="w6" Joints="N(b14:D22) N(n20:x)" />
+                                <Wire Id="w7" Joints="N(n4:Out) N(n20:y)" />
+                                <Wire Id="w8" Joints="N(n20:x\-y) h(133) v(-7) N(b17:D22)" />
                             </CaseStructure.Case>
-                            <CaseStructure.Selector Id="b4" Terminals="n48=w22, D50, D51" TopLeft="0 133" />
-                            <CaseStructure.Tunnel Id="b18" Terminals="n48=w18, D50=w13, D51=w4" TopLeft="0 91" />
-                            <CaseStructure.Tunnel Id="b19" Terminals="n48=w21, D50=w19, D51=w4" TopLeft="189 91" />
-                            <CaseStructure.Tunnel Id="b21" Terminals="n48=w12, D50=w11, D51" TopLeft="0 49" />
+                            <CaseStructure.Selector Id="b4" Terminals="n19=w10, D21, D22" TopLeft="0 42" />
+                            <CaseStructure.Tunnel Id="b14" Terminals="n19=w14, D21=w8, D22=w6" TopLeft="0 91" />
+                            <CaseStructure.Tunnel Id="b17" Terminals="n19=w17, D21=w9, D22=w8" TopLeft="308 91" />
                         </CaseStructure>
-                        <Divide Id="n52" Terminals="x\/y=w50, y=w23, x=w12" TopLeft="28 98" />
-                        <Wire Id="w50" Joints="N(n52:x\/y) N(n51:x)" />
-                        <InverseTangent Id="n51" Terminals="arctan\(x\)=w18, x=w50" TopLeft="70 105" />
-                        <Wire Id="w12" Joints="N(b47:D24) h(7) N(b21:n48) B(1) v(35) N(n52:x)" />
-                        <Wire Id="w18" Joints="N(n51:arctan\(x\)) N(b18:n48)" />
-                        <Wire Id="w21" Joints="N(b19:n48) N(b38:D24)" />
-                        <IsGreaterThan0 Id="n62" Terminals="x\ \&gt;\ 0\?=w22, x=w23" TopLeft="28 147" />
-                        <Wire Id="w22" Joints="N(n62:x\ \&gt;\ 0\?) N(b4:n48)" />
-                        <Wire Id="w23" Joints="N(b48:D24) h(7) N(n62:x) B(1) v(-35) N(n52:y)" />
+                        <IsLess Id="n8" Terminals="x\ \&lt;\ y\?=w10, y=w20, x=w13" TopLeft="63 77" />
+                        <Wire Id="w20" Joints="N(n11:Out) N(n8:y)" />
+                        <Wire Id="w10" Joints="N(n8:x\ \&lt;\ y\?) N(b4:n19)" />
+                        <Literal Id="n11" Terminals="Out=w20" Bounds="21 91 28 14" Interpretation="Exact" DataType="Double">0</Literal>
+                        <Wire Id="w13" Joints="N(b18:d1) N(n8:x)" />
+                        <Wire Id="w14" Joints="N(b15:d1) N(b14:n19)" />
+                        <Wire Id="w17" Joints="N(b17:n19) N(b16:d1)" />
                     </CaseStructure.Case>
-                    <CaseStructure.Case Id="D25" Bounds="7 7 343 203" Pattern="True">
-                        <Wire Id="w5" Joints="N(n48:Out) N(b38:D25)" />
-                        <Literal Id="n48" Terminals="Out=w5" Bounds="287 105 28 14" Interpretation="Exact" DataType="Double">0</Literal>
-                    </CaseStructure.Case>
-                    <CaseStructure.Selector Id="b22" Terminals="n22=w47, D24, D25" TopLeft="0 112" />
-                    <CaseStructure.Tunnel Id="b38" Terminals="n22=w41, D24=w21, D25=w5" TopLeft="343 112" />
-                    <CaseStructure.Tunnel Id="b47" Terminals="n22=w44, D24=w12, D25" TopLeft="0 70" />
-                    <CaseStructure.Tunnel Id="b48" Terminals="n22=w48, D24=w23, D25" TopLeft="0 154" />
+                    <CaseStructure.Selector Id="b6" Terminals="n0=w11, d0, d1" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b15" Terminals="n0=w21, d0=w4, d1=w14" TopLeft="0 140" />
+                    <CaseStructure.Tunnel Id="b16" Terminals="n0=w18, d0=w4, d1=w17" TopLeft="483 140" />
+                    <CaseStructure.Tunnel Id="b18" Terminals="n0=w4, d0, d1=w13" TopLeft="0 84" />
                 </CaseStructure>
-                <And Id="n45" Terminals="x\ \.and\.\ y\?=w47, y=w62, x=w61" TopLeft="371 105" />
-                <IsEqualTo0 Id="n68" Terminals="x\ \=\ 0\?=w62, x=w48" TopLeft="329 119" />
-                <IsEqualTo0 Id="n61" Terminals="x\ \=\ 0\?=w61, x=w44" TopLeft="329 105" />
+                <IsLess Id="n10" Terminals="x\ \&lt;\ y\?=w11, y=w13, x=w5" TopLeft="364 56" />
+                <Wire Id="w11" Joints="N(n10:x\ \&lt;\ y\?) N(b6:n0)" />
+                <Literal Id="n12" Terminals="Out=w13" Bounds="308 70 28 14" Interpretation="Exact" DataType="Double">0</Literal>
+                <Wire Id="w13" Joints="N(n12:Out) N(n10:y)" />
+                <DataAccessor DataItem="Result" Id="n14" Bounds="952 161 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w18" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w18" Joints="N(b16:n0) N(n14:Value)" />
+                <InverseTangent Id="n19" Terminals="arctan\(x\)=w21, x=w20" TopLeft="294 161" />
+                <Wire Id="w20" Joints="N(n3:x\/y) N(n19:x)" />
+                <Wire Id="w21" Joints="N(n19:arctan\(x\)) N(b15:n0)" />
             </BlockDiagram>
             <Icon>
                 <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="70" Width="56">

@@ -69,8 +69,11 @@
       <Block Mode="Select" DisplayName="Select">
         <Description><![CDATA[<p>Context help for Select</p>]]></Description>
       </Block>
-	  <Block Mode="Atan2" DisplayName="Atan2">
+	  <Block Mode="Atan2" DisplayName="Atan2 (Divides By Zero = 0)">
         <Description><![CDATA[<p>Context help for Atan2</p>]]></Description>
+      </Block>
+	  <Block Mode="Atan2_ORG" DisplayName="Atan2 (Divides By Zero = inf)">
+        <Description><![CDATA[<p>Context help for Atan2 ORG</p>]]></Description>
       </Block>
 	  <Block Mode="QAR" DisplayName="Quotient and Remainder">
         <Description><![CDATA[<p>Context help for Quotient and Remainder</p>]]></Description>
