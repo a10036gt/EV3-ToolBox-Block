@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
     <Namespace Name="Project">
-        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
-            <DataItem Name="MinOutput" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" />
+        <VirtualInstrument IsTopLevel="false" IsReentrant="true" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="MinOutput" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="1" />
             <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" />
             <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="4" />
-            <DataItem Name="MaxOutput" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="1" />
+            <DataItem Name="MaxOutput" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" />
             <DataItem Name="arrayInNumeric" DataType="Single[]" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
             <DataItem Name="MinIndex" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="3" />
             <DataItem Name="MaxIndex" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="2" />
             <FrontPanel>
-                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
                 <DataAccessor DataItem="MinOutput" Id="n14" Bounds="798 504 84 14">
@@ -26,13 +26,13 @@
                     <ForLoop.Iteration Id="n1" Terminals="Output=w6" TopLeft="0 175" />
                     <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n29" Terminals="array=w5, c0t0v=w6, c0t1v=w9" Bounds="70 42 28 28" />
                     <Wire Id="w5" Joints="N(b24:d0) N(n29:array)" />
-                    <Wire Id="w6" Joints="N(n1:Output) h(14) v(7) N(n15:t) B(1) v(-119) N(n29:c0t0v)" />
+                    <Wire Id="w6" Joints="N(n1:Output) h(14) v(-119) N(n29:c0t0v) B(1) v(7) N(n15:t)" />
                     <IsGreater Id="n16" Terminals="x\ \&gt;\ y\?=w10, y=w14, x=w9" TopLeft="119 84" />
                     <Select Id="n76" Terminals="s\?\ t\:f=w11, f=w14, s=w10, t=w9" TopLeft="168 77" />
-                    <Wire Id="w9" Joints="N(n29:c0t1v) h(8) h(51) v(21) N(n76:t) B(1) v(28) N(n16:x)" />
-                    <Wire Id="w10" Joints="N(n16:x\ \&gt;\ y\?) h(11) v(105) N(n15:s) B(1) N(n76:s)" />
+                    <Wire Id="w9" Joints="N(n29:c0t1v) h(8) v(28) N(n16:x) B(1) h(51) v(21) N(n76:t)" />
+                    <Wire Id="w10" Joints="N(n16:x\ \&gt;\ y\?) h(11) N(n76:s) B(1) v(105) N(n15:s)" />
                     <Wire Id="w11" Joints="N(n76:s\?\ t\:f) h(7) v(35) N(b17:d0)" />
-                    <Wire Id="w14" Joints="N(b18:i0) h(99) v(-28) N(n16:y) B(1) h(43) v(-21) N(n76:f)" />
+                    <Wire Id="w14" Joints="N(b18:i0) h(99) h(43) v(-21) N(n76:f) B(1) v(-28) N(n16:y)" />
                     <Select Id="n15" Terminals="s\?\ t\:f=w16, f=w19, s=w10, t=w6" TopLeft="168 182" />
                     <Wire Id="w16" Joints="N(n15:s\?\ t\:f) h(7) v(14) N(b33:d0)" />
                     <Wire Id="w19" Joints="N(b34:i0) N(n15:f)" />
@@ -44,18 +44,18 @@
                     <ForLoop.LeftShiftRegister RightRegister="b33" Id="b34" Terminals="o0=w27, i0=w19" TopLeft="0 211" />
                 </ForLoop>
                 <ArraySize Id="n7" Terminals="size\(s\)=w9, array=w21" TopLeft="287 98" />
-                <Wire Id="w9" Joints="N(n7:size\(s\)) h(52) N(b4:n0) B(1) v(280) N(b16:n16)" />
+                <Wire Id="w9" Joints="N(n7:size\(s\)) h(52) v(280) N(b16:n16) B(1) N(b4:n0)" />
                 <Wire Id="w12" Joints="N(b17:n0) N(n2:Value)" />
                 <ForLoop DiagramId="D21" Id="n16" Bounds="405 377 357 252">
                     <ForLoop.Iteration Id="n1" Terminals="Output=w6" TopLeft="0 161" />
                     <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n29" Terminals="array=w5, c0t0v=w6, c0t1v=w9" Bounds="70 42 28 28" />
                     <Wire Id="w5" Joints="N(b19:D21) N(n29:array)" />
-                    <Wire Id="w6" Joints="N(n1:Output) h(14) v(-105) N(n29:c0t0v) B(1) N(n15:t)" />
+                    <Wire Id="w6" Joints="N(n1:Output) h(14) N(n15:t) B(1) v(-105) N(n29:c0t0v)" />
                     <Select Id="n76" Terminals="s\?\ t\:f=w11, f=w14, s=w10, t=w9" TopLeft="168 77" />
-                    <Wire Id="w9" Joints="N(n29:c0t1v) h(8) h(51) v(21) N(n76:t) B(1) v(28) N(n23:x)" />
-                    <Wire Id="w10" Joints="N(n23:x\ \&lt;\ y\?) h(7) v(84) N(n15:s) B(1) N(n76:s)" />
+                    <Wire Id="w9" Joints="N(n29:c0t1v) h(8) v(28) N(n23:x) B(1) h(51) v(21) N(n76:t)" />
+                    <Wire Id="w10" Joints="N(n23:x\ \&lt;\ y\?) h(7) N(n76:s) B(1) v(84) N(n15:s)" />
                     <Wire Id="w11" Joints="N(n76:s\?\ t\:f) h(7) v(35) N(b20:D21)" />
-                    <Wire Id="w14" Joints="N(b21:D21) h(99) h(43) v(-21) N(n76:f) B(1) v(-28) N(n23:y)" />
+                    <Wire Id="w14" Joints="N(b21:D21) h(99) v(-28) N(n23:y) B(1) h(43) v(-21) N(n76:f)" />
                     <IsLess Id="n23" Terminals="x\ \&lt;\ y\?=w10, y=w14, x=w9" TopLeft="119 84" />
                     <Select Id="n15" Terminals="s\?\ t\:f=w16, f=w19, s=w10, t=w6" TopLeft="168 161" />
                     <Wire Id="w16" Joints="N(n15:s\?\ t\:f) h(7) v(14) N(b25:D21)" />
@@ -68,7 +68,7 @@
                     <ForLoop.LeftShiftRegister RightRegister="b25" Id="b26" Terminals="o0=w27, i0=w19" TopLeft="0 190" />
                 </ForLoop>
                 <Wire Id="w22" Joints="N(b20:n16) N(n14:Value)" />
-                <Wire Id="w21" Joints="N(n3:Array) h(34) v(42) v(14) N(n20:array) B(3) v(266) N(b19:n16) B(2) N(b24:n0) B(1) N(n7:array)" />
+                <Wire Id="w21" Joints="N(n3:Array) h(34) N(n7:array) B(1) v(42) N(b24:n0) B(3) v(14) v(266) N(b19:n16) B(5) N(n20:array)" />
                 <DataAccessor DataItem="MinIndex" Id="n21" Bounds="868 567 84 14">
                     <Terminal Id="Value" Direction="Input" Wire="w29" Hotspot="0 0.5" Bounds="0 0 84 14" />
                 </DataAccessor>
@@ -76,7 +76,7 @@
                     <Terminal Id="Value" Direction="Input" Wire="w31" Hotspot="0 0.5" Bounds="0 0 84 14" />
                 </DataAccessor>
                 <Literal Id="n26" Terminals="Out=w27" Bounds="238 567 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
-                <Wire Id="w27" Joints="N(n26:Out) h(33) v(-399) N(n20:c0t0v) B(1) h(86) v(-259) N(b34:o0) B(4) N(b26:o0)" />
+                <Wire Id="w27" Joints="N(n26:Out) h(33) h(86) N(b26:o0) B(2) v(-259) N(b34:o0) B(1) v(-399) N(n20:c0t0v)" />
                 <ToSinglePrecisionFloat Id="n28" Terminals="single\ precision\ float=w29, number=w28" TopLeft="798 567" />
                 <Wire Id="w28" Joints="N(b25:n16) N(n28:number)" />
                 <Wire Id="w29" Joints="N(n28:single\ precision\ float) N(n21:Value)" />
@@ -84,17 +84,17 @@
                 <Wire Id="w31" Joints="N(n30:single\ precision\ float) N(n22:Value)" />
                 <Wire Id="w33" Joints="N(b33:n0) h(8) v(-14) N(n30:number)" />
                 <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n20" Terminals="array=w21, c0t0v=w27, c0t1v=w36" Bounds="308 154 28 28" />
-                <Wire Id="w36" Joints="N(n20:c0t1v) h(7) v(336) N(b21:n16) B(1) h(55) v(56) N(b18:o0)" />
+                <Wire Id="w36" Joints="N(n20:c0t1v) h(7) h(55) v(56) N(b18:o0) B(1) v(336) N(b21:n16)" />
             </BlockDiagram>
             <Icon>
-                <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="70" Width="56">
+                <Model:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="70" Width="56">
                     <fpruntime:AnimationProperties.Animations>
                         <fpruntime:AnimationsContainer />
                     </fpruntime:AnimationProperties.Animations>
                     <fpruntime:EventProperties.Events>
                         <fpruntime:EventContainer />
                     </fpruntime:EventProperties.Events>
-                    <Model0:IconPanel.Background>
+                    <Model:IconPanel.Background>
                         <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <ation:LinearGradientBrush.Transform>
                                 <ation:MatrixTransform />
@@ -106,7 +106,7 @@
                             <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
                             <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
                         </ation:LinearGradientBrush>
-                    </Model0:IconPanel.Background>
+                    </Model:IconPanel.Background>
                     <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 13, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
                         <fpruntime:AnimationProperties.Animations>
                             <fpruntime:AnimationsContainer />
@@ -143,7 +143,7 @@
                             <fpruntime:EventContainer />
                         </fpruntime:EventProperties.Events>
                     </ation:TextBlock>
-                </Model0:IconPanel>
+                </Model:IconPanel>
             </Icon>
         </VirtualInstrument>
     </Namespace>

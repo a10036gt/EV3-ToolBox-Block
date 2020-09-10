@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
     <Namespace Name="Project">
-        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="true" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
             <DataItem Name="Input" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
             <DataItem Name="fromLow" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
             <DataItem Name="Result" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" />
@@ -34,11 +34,11 @@
                 </DataAccessor>
                 <Subtract Id="n7" Terminals="x\-y=w15, y=w9, x=w8" TopLeft="518 147" />
                 <Wire Id="w8" Joints="N(n1:Value) h(49) v(14) N(n7:x)" />
-                <Wire Id="w9" Joints="N(n2:Value) h(29) v(119) N(n17:y) B(1) N(n7:y)" />
+                <Wire Id="w9" Joints="N(n2:Value) h(29) N(n7:y) B(1) v(119) N(n17:y)" />
                 <Multiply Id="n10" Terminals="x\*y=w20, y=w14, x=w15" TopLeft="581 189" />
                 <Subtract Id="n11" Terminals="x\-y=w14, y=w13, x=w12" TopLeft="518 196" />
                 <Wire Id="w12" Joints="N(n6:Value) N(n11:x)" />
-                <Wire Id="w13" Joints="N(n5:Value) h(40) v(7) h(86) v(28) N(n21:y) B(1) h(2) v(-14) N(n11:y)" />
+                <Wire Id="w13" Joints="N(n5:Value) h(40) h(2) v(-14) N(n11:y) B(1) v(7) h(86) v(28) N(n21:y)" />
                 <Wire Id="w14" Joints="N(n11:x\-y) N(n10:y)" />
                 <Wire Id="w15" Joints="N(n7:x\-y) h(28) v(35) N(n10:x)" />
                 <Comment Bounds="385 42 462 77" SizeMode="User" AttachStyle="Free">

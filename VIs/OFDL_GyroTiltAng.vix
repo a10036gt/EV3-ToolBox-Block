@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Angle" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Angle" Id="n14" Bounds="588 147 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w19" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w19" Joints="N(n17:Value) N(n14:Value)" />
+                <MethodCall Id="n17" Bounds="532 147 28 70" Target="X3\.Lib:PBrickInputReadySI">
+                    <Terminal Id="layer" Direction="Input" Wire="w9" DataType="SByte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="port" Direction="Input" Wire="w8" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="type" Direction="Input" Wire="w11" DataType="SByte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="Mode" Direction="Input" Wire="w13" DataType="SByte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                    <Terminal Id="ValueCount" Direction="Input" Wire="w15" DataType="SByte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                    <Terminal Id="Value" Direction="Output" Wire="w19" DataType="Single" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Wire Id="w8" Joints="N(n16:portOut) N(n17:port)" />
+                <Wire Id="w9" Joints="N(n16:layer) N(n17:layer)" />
+                <Literal Id="n10" Terminals="Out=w11" Bounds="420 175 28 14" Interpretation="Exact" DataType="Byte">32</Literal>
+                <Wire Id="w11" Joints="N(n10:Out) N(n17:type)" />
+                <Literal Id="n12" Terminals="Out=w13" Bounds="371 189 28 14" Interpretation="Exact" DataType="Byte">6</Literal>
+                <Wire Id="w13" Joints="N(n12:Out) N(n17:Mode)" />
+                <Literal Id="n15" Terminals="Out=w15" Bounds="476 203 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                <Wire Id="w15" Joints="N(n15:Out) N(n17:ValueCount)" />
+                <Wire Id="w20" Joints="N(n19:Value) N(n16:port)" />
+                <DataAccessor DataItem="Port" Id="n19" Bounds="182 147 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w20" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <MethodCall Id="n16" Bounds="301 147 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                    <Terminal Id="port" Direction="Input" Wire="w20" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="layer" Direction="Output" Wire="w9" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                    <Terminal Id="portOut" Direction="Output" Wire="w8" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                </MethodCall>
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

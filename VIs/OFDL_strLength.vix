@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Output" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="InputStr" DataType="String" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" AdaptToDiagramType="true" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Output" Id="n13" Bounds="651 364 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w20" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <MethodCall Id="n24" Bounds="581 364 28 14" Target="X3\.Lib:PBrickStringLength">
+                    <Terminal Id="value" Direction="Input" Wire="w5" DataType="String" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="size" Direction="Output" Wire="w20" DataType="Int16" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Wire Id="w20" Joints="N(n24:size) N(n13:Value)" />
+                <DataAccessor DataItem="InputStr" Id="n4" Bounds="399 364 77 14">
+                    <Terminal Id="String" Direction="Output" Wire="w5" Hotspot="1 0.5" Bounds="0 0 77 14" />
+                </DataAccessor>
+                <Wire Id="w5" Joints="N(n4:String) N(n24:value)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

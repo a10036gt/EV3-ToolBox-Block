@@ -1,98 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EditorStrings>
-  <PolyGroups ModuleName="UsefulTools">
-    <PolyGroup Name="UsefulTools" DisplayName="EV3 ToolBox (OFDL V3)">
-      <Description><![CDATA[<p>Context help for PolyGroup EV3 Useful Tools</p>]]></Description>
-      <Parameter Name="True" DisplayName="True">
-        <Description><![CDATA[<p>Context help for True</p>]]></Description>
-      </Parameter>
-      <Parameter Name="False" DisplayName="False">
-        <Description><![CDATA[<p>Context help for False</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Select" DisplayName="Select">
-        <Description><![CDATA[<p>Context help for Select</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Result" DisplayName="Result">
-        <Description><![CDATA[<p>Context help for Result<</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="X" DisplayName="X">
-        <Description><![CDATA[<p>Context help for X<</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Y" DisplayName="Y">
-        <Description><![CDATA[<p>Context help for Y<</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Input" DisplayName="Input" >
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Input value.</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Max" DisplayName="Maximum Value">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Maximum value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Min" DisplayName="Minimum Value">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Minimum value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Output" DisplayName="Output">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Quotient" DisplayName="Quotient">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Remainder" DisplayName="Remainder">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="fromLow" DisplayName="fromLow">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="fromHigh" DisplayName="fromHigh">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="toLow" DisplayName="toLow">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="toHigh" DisplayName="toHigh">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="MinOutput" DisplayName="Min Output">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="MaxOutput" DisplayName="Max Output">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="MinIndex" DisplayName="Min Index">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="MaxIndex" DisplayName="Max Index">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="arrayInNumeric" DisplayName="Array Input">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
-      </Parameter>
-      <Block Mode="Select" DisplayName="Select">
-        <Description><![CDATA[<p>Context help for Select</p>]]></Description>
-      </Block>
-	  <Block Mode="Atan2" DisplayName="Atan2 (Divides By Zero = 0)">
-        <Description><![CDATA[<p>Context help for Atan2</p>]]></Description>
-      </Block>
-	  <Block Mode="Atan2_ORG" DisplayName="Atan2 (Divides By Zero = inf)">
-        <Description><![CDATA[<p>Context help for Atan2 ORG</p>]]></Description>
-      </Block>
-	  <Block Mode="QAR" DisplayName="Quotient and Remainder">
-        <Description><![CDATA[<p>Context help for Quotient and Remainder</p>]]></Description>
-      </Block>
-	  <Block Mode="Wrap" DisplayName="NumLimit-Wrap (T2H)">
-        <Description><![CDATA[Wrap Number Mode.]]></Description>
-      </Block>
-      <Block Mode="Clamp" DisplayName="NumLimit-Clamp (T2H)">
-        <Description><![CDATA[Clamp Number Mode.]]></Description>
-      </Block>
-	  <Block Mode="Map" DisplayName="Map Value">
-        <Description><![CDATA[map Number Mode.]]></Description>
-      </Block>
-	  <Block Mode="Maxminarray" DisplayName="Array Max-Min">
-        <Description><![CDATA[Array Max-Min Mode.]]></Description>
-      </Block>
-	  <Block Mode="Maxmin" DisplayName="Max and Min">
-        <Description><![CDATA[Max and Min Mode.]]></Description>
-      </Block>
-    </PolyGroup>
-  </PolyGroups>
+	<PolyGroups ModuleName="UsefulTools">
+		<PolyGroup Name="UsefulTools" DisplayName="EV3 ToolBox (OFDL V4)">
+			<Description><![CDATA[<p>Context help for PolyGroup EV3 Useful Tools</p>]]></Description>
+			<Parameter Name="True" DisplayName="True">
+				<Description><![CDATA[<p>Context help for True</p>]]></Description>
+			</Parameter>
+			<Parameter Name="False" DisplayName="False">
+				<Description><![CDATA[<p>Context help for False</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Select" DisplayName="Select">
+				<Description><![CDATA[<p>Context help for Select</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Result" DisplayName="Result">
+				<Description><![CDATA[<p>Context help for Result<</p>]]></Description>
+			</Parameter>
+			<Parameter Name="X" DisplayName="X">
+				<Description><![CDATA[<p>Context help for X<</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Y" DisplayName="Y">
+				<Description><![CDATA[<p>Context help for Y<</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Input" DisplayName="Input">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Input value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Max" DisplayName="Maximum Value">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Maximum value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Min" DisplayName="Minimum Value">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Minimum value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Output" DisplayName="Output">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Quotient" DisplayName="Quotient">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Remainder" DisplayName="Remainder">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="fromLow" DisplayName="fromLow">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="fromHigh" DisplayName="fromHigh">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="toLow" DisplayName="toLow">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="toHigh" DisplayName="toHigh">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="MinOutput" DisplayName="Min Output">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="MaxOutput" DisplayName="Max Output">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="MinIndex" DisplayName="Min Index">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="MaxIndex" DisplayName="Max Index">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="arrayInNumeric" DisplayName="Array Input">
+				<Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Output value.</p>]]></Description>
+			</Parameter>
+			<Parameter Name="FileName" DisplayName="File Name"/>
+			<Parameter Name="LogicResult" DisplayName="Result"/>
+			<Parameter Name="Port" DisplayName="Port"/>
+			<Parameter Name="Mode" DisplayName="Mode ID"/>
+			<Parameter Name="MotorPort" DisplayName="MotorPort"/>
+			<Parameter Name="Name" DisplayName="Mode Name"/>
+			<Parameter Name="InputStr" DisplayName="Text Input"/>
+			<Category Name="NumCompare" DisplayName="Number Compare">
+				<Block Mode="Select" DisplayName="Select"/>
+				<Block Mode="Maxmin" DisplayName="Max and Min"/>
+				<Block Mode="Maxminarray" DisplayName="Array Max and Min"/>
+			</Category>
+			<Category Name="NumMath" DisplayName="Mathematics">
+				<Block Mode="Atan2" DisplayName="Atan2 (Divides By Zero = 0)">
+					<Description><![CDATA[<p>Context help for Atan2</p>]]></Description>
+				</Block>
+				<Block Mode="Atan2_ORG" DisplayName="Atan2 (Divides By Zero = inf)">
+					<Description><![CDATA[<p>Context help for Atan2 ORG</p>]]></Description>
+				</Block>
+				<Block Mode="QAR" DisplayName="Quotient and Remainder">
+					<Description><![CDATA[<p>Context help for Quotient and Remainder</p>]]></Description>
+				</Block>
+			</Category>
+			<Category Name="NumLimit" DisplayName="Number Limiter">
+				<Block Mode="Wrap" DisplayName="Number Wrap">
+					<Description><![CDATA[Wrap Number Mode.]]></Description>
+				</Block>
+				<Block Mode="Clamp" DisplayName="Number Clamp">
+					<Description><![CDATA[Clamp Number Mode.]]></Description>
+				</Block>
+			</Category>
+			<Category Name="AdvSen" DisplayName="Sensor Tester">
+				<Block Mode="SensorName" DisplayName="Current Sensor Mode"/>
+				<Block Mode="SensorMode" DisplayName="Sensor Mode Scanner"/>
+				<Block Mode="MotorName" DisplayName="Current Motor Mode"/>
+				<Block Mode="MotorMode" DisplayName="Motor Mode Scanner"/>
+			</Category>
+			<Category Name="AdvGyro" DisplayName="Advanced Gyro">
+				<Block Mode="TiltRate" DisplayName="Measure Tilt Rate"/>
+				<Block Mode="TiltAng" DisplayName="Measure Tilt Angle"/>
+				<Block Mode="GyroReset" DisplayName="Reset Gyro(Hard Reset)"/>
+			</Category>
+			<Category Name="AdvOps" DisplayName="Advanced Tools">
+				<Block Mode="isFileExist" DisplayName="File Existing Check"/>
+				<Block Mode="strLength" DisplayName="String Length"/>
+			</Category>
+			<Block Mode="Map" DisplayName="Map Value (Normalize)">
+				<Description><![CDATA[map Number Mode.]]></Description>
+			</Block>
+		</PolyGroup>
+	</PolyGroups>
 </EditorStrings>

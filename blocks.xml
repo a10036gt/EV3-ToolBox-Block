@@ -1,103 +1,186 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <EditorDefinitions>
-  <PolyGroups ModuleName="UsefulTools" ModuleVersion="1.7 (By OFDL Dev.)">
-    <PolyGroup Name="UsefulTools" BlockFamily="DataOperations">
-      <Parameter Name="True" Direction="Input" DataType="Single" DefaultValue="0"  Identification="Identification_True.png"/>
-      <Parameter Name="False" Direction="Input" DataType="Single" DefaultValue="0"  Identification="Identification_False.png"/>
-	  <Parameter Name="X" Direction="Input" DataType="Single" DefaultValue="0"  Identification="builtin://Identification_X.png"/>
-	  <Parameter Name="Y" Direction="Input" DataType="Single" DefaultValue="0"  Identification="builtin://Identification_Y.png"/>
-      <Parameter Name="Result" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
-      <Parameter Name="Quotient" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
-      <Parameter Name="Remainder" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
-      <Parameter Name="Select" Direction="Input" DataType="Boolean" DefaultValue="True"  Identification="builtin://Identification_OutputBoolean.png"/>
-	  <Parameter Name="Input" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="Min" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="Max" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="100" />
-	  <Parameter Name="Output" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output" />
-	  <Parameter Name="fromLow" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="fromHigh" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="1023" />
-	  <Parameter Name="toLow" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="toHigh" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="255" />
-	  <Parameter Name="arrayInNumeric" Direction="Input" DataType="Single[]" DefaultValue="[0]" Identification="builtin://Identification_ArrayInNumeric.png" />
-	  <Parameter Name="arrayOutNumeric" Direction="Output" DataType="Single[]" Identification="builtin://Identification_ArrayInNumeric.png" />
-	  <Parameter Name="MaxOutput" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Output" />
-	  <Parameter Name="MaxIndex" Identification="builtin://Identification_Index.png" DataType="Single" Direction="Output" />
-	  <Parameter Name="MinOutput" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Output" />
-	  <Parameter Name="MinIndex" Identification="builtin://Identification_Index.png" DataType="Single" Direction="Output" />
-      <Block>
-        <Mode>Select</Mode>
-        <Reference Type="VILib" Name="Select.vix" />
-		<ParameterReference Name="Select"/>
-        <ParameterReference Name="True"/>
-        <ParameterReference Name="False"/>
-        <ParameterReference Name="Result"/>
-        <PaletteInfo Weight="0.5" />
-      </Block>
-	  <Block>
-        <Mode>Atan2</Mode>
-        <Reference Type="VILib" Name="Atan2.vix" />
-		<ParameterReference Name="Y"/>
-        <ParameterReference Name="X"/>
-		<ParameterReference Name="Result"/>
-      </Block>
-	  <Block>
-        <Mode>Atan2_ORG</Mode>
-        <Reference Type="VILib" Name="Atan2_ORG.vix" />
-		<ParameterReference Name="Y"/>
-        <ParameterReference Name="X"/>
-		<ParameterReference Name="Result"/>
-      </Block>
-	  <Block>
-        <Mode>QAR</Mode>
-        <Reference Type="VILib" Name="QAR.vix" />
-		<ParameterReference Name="X"/>
-        <ParameterReference Name="Y"/>
-		<ParameterReference Name="Quotient"/>
-		<ParameterReference Name="Remainder"/>
-      </Block>
-	  <Block>
-        <Mode>Clamp</Mode>
-        <Reference Type="VILib" Name="LimitNumClamp.vix" />
-        <ParameterReference Name="Input" />
-		<ParameterReference Name="Min" />
-        <ParameterReference Name="Max" />
-		<ParameterReference Name="Output" />
-      </Block>
-      <Block>
-        <Mode>Wrap</Mode>
-        <Reference Type="VILib" Name="LimitNumWrap.vix" />
-        <ParameterReference Name="Input" />
-		<ParameterReference Name="Min" />
-        <ParameterReference Name="Max" />
-        <ParameterReference Name="Output" />
-      </Block>
-	  <Block>
-        <Mode>Map</Mode>
-        <Reference Type="VILib" Name="Map.vix" />
-        <ParameterReference Name="Input" />
-		<ParameterReference Name="fromLow" />
-        <ParameterReference Name="fromHigh" />
-		<ParameterReference Name="toLow" />
-        <ParameterReference Name="toHigh" />
-        <ParameterReference Name="Result" />
-      </Block>
-	  <Block>
-        <Mode>Maxmin</Mode>
-        <Reference Type="VILib" Name="Maxmin.vix" />
-        <ParameterReference Name="X"/>
-        <ParameterReference Name="Y"/>
-		<ParameterReference Name="MinOutput" />
-		<ParameterReference Name="MaxOutput" />
-      </Block>
-	  <Block>
-        <Mode>Maxminarray</Mode>
-        <Reference Type="VILib" Name="Maxmin_array.vix" />
-        <ParameterReference Name="arrayInNumeric" />
-		<ParameterReference Name="MinOutput" />
-		<ParameterReference Name="MinIndex" />
-        <ParameterReference Name="MaxOutput" />
-		<ParameterReference Name="MaxIndex" />
-      </Block>
-    </PolyGroup>
-  </PolyGroups>
+	<PolyGroups ModuleName="UsefulTools" ModuleVersion="1.8 (By OFDL Dev.)">
+		<PolyGroup Name="UsefulTools" BlockFamily="DataOperations">
+			<Parameter Name="True" Direction="Input" DataType="Single" DefaultValue="0" Identification="Identification_True.png"/>
+			<Parameter Name="False" Direction="Input" DataType="Single" DefaultValue="0" Identification="Identification_False.png"/>
+			<Parameter Name="X" Direction="Input" DataType="Single" DefaultValue="0" Identification="builtin://Identification_X.png"/>
+			<Parameter Name="Y" Direction="Input" DataType="Single" DefaultValue="0" Identification="builtin://Identification_Y.png"/>
+			<Parameter Name="Result" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
+			<Parameter Name="Quotient" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
+			<Parameter Name="Remainder" Direction="Output" DataType="Single" Identification="builtin://Identification_Result.png"/>
+			<Parameter Name="Select" Direction="Input" DataType="Boolean" DefaultValue="True" Identification="builtin://Identification_OutputBoolean.png"/>
+			<Parameter Name="Input" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="0"/>
+			<Parameter Name="Min" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0"/>
+			<Parameter Name="Max" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="100"/>
+			<Parameter Name="Output" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output"/>
+			<Parameter Name="fromLow" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0"/>
+			<Parameter Name="fromHigh" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="1023"/>
+			<Parameter Name="toLow" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Input" DefaultValue="0"/>
+			<Parameter Name="toHigh" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Input" DefaultValue="255"/>
+			<Parameter Name="arrayInNumeric" Direction="Input" DataType="Single[]" DefaultValue="[0]" Identification="builtin://Identification_ArrayInNumeric.png"/>
+			<Parameter Name="arrayOutNumeric" Direction="Output" DataType="Single[]" Identification="builtin://Identification_ArrayInNumeric.png"/>
+			<Parameter Name="MaxOutput" Identification="builtin://Identification_UpperBound.png" DataType="Single" Direction="Output"/>
+			<Parameter Name="MaxIndex" Identification="builtin://Identification_Index.png" DataType="Single" Direction="Output"/>
+			<Parameter Name="MinOutput" Identification="builtin://Identification_LowerBound.png" DataType="Single" Direction="Output"/>
+			<Parameter Name="MinIndex" Identification="builtin://Identification_Index.png" DataType="Single" Direction="Output"/>
+			<Parameter Name="FileName" Visibility="Special" Direction="Input" DataType="String" Identification="builtin://Identification_FileName.png" DefaultValue="abc" SpecialTerminalIsBrickFileName="true"/>
+			<Parameter Name="LogicResult" Direction="Output" DataType="Boolean" Identification="builtin://Identification_OutputBoolean.png"/>
+			<Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3"/>
+			<Parameter Name="MotorPort" CompilerDirectives="OneOutputPort" Direction="Input" DefaultValue="1.A"/>
+			<Parameter Name="Name" Direction="Output" DataType="String" Identification="builtin://Identification_Text.png"/>
+			<Parameter Name="Mode" Direction="Input" DataType="Single" DefaultValue="0" Identification="builtin://Identification_angle.png"/>
+			<Parameter Name="InputStr" Direction="Input" DataType="String" Identification="builtin://Identification_Text.png" DefaultValue="OFDL"/>
+			<Parameter Name="Angle" Identification="builtin://Identification_angle.png" Direction="Output" DataType="Single" />
+			<Parameter Name="Rate" Identification="builtin://Identification_Rate.png" Direction="Output" DataType="Single" />
+			
+			<Hardware>
+				<AlternativePolyGroupName>Motor</AlternativePolyGroupName>
+				<AlternativePolyGroupName>MediumMotor</AlternativePolyGroupName>
+				<OtherAutoID>0</OtherAutoID>
+				<EV3AutoID>0</EV3AutoID>
+			</Hardware>
+			<Category Name="NumCompare">
+				<Block>
+					<Mode>Select</Mode>
+					<Reference Type="VILib" Name="Select.vix"/>
+					<ParameterReference Name="Select"/>
+					<ParameterReference Name="True"/>
+					<ParameterReference Name="False"/>
+					<ParameterReference Name="Result"/>
+					<PaletteInfo Weight="0.5"/>
+				</Block>
+				<Block>
+					<Mode>Maxmin</Mode>
+					<Reference Type="VILib" Name="Maxmin.vix"/>
+					<ParameterReference Name="X"/>
+					<ParameterReference Name="Y"/>
+					<ParameterReference Name="MinOutput"/>
+					<ParameterReference Name="MaxOutput"/>
+				</Block>
+				<Block>
+					<Mode>Maxminarray</Mode>
+					<Reference Type="VILib" Name="Maxmin_array.vix"/>
+					<ParameterReference Name="arrayInNumeric"/>
+					<ParameterReference Name="MinOutput"/>
+					<ParameterReference Name="MinIndex"/>
+					<ParameterReference Name="MaxOutput"/>
+					<ParameterReference Name="MaxIndex"/>
+				</Block>
+			</Category>
+			<Category Name="NumLimit">
+				<Block>
+					<Mode>Clamp</Mode>
+					<Reference Type="VILib" Name="LimitNumClamp.vix"/>
+					<ParameterReference Name="Input"/>
+					<ParameterReference Name="Min"/>
+					<ParameterReference Name="Max"/>
+					<ParameterReference Name="Output"/>
+				</Block>
+				<Block>
+					<Mode>Wrap</Mode>
+					<Reference Type="VILib" Name="LimitNumWrap.vix"/>
+					<ParameterReference Name="Input"/>
+					<ParameterReference Name="Min"/>
+					<ParameterReference Name="Max"/>
+					<ParameterReference Name="Output"/>
+				</Block>
+			</Category>
+			<Category Name="NumMath">
+				<Block>
+					<Mode>Atan2</Mode>
+					<Reference Type="VILib" Name="Atan2.vix"/>
+					<ParameterReference Name="Y"/>
+					<ParameterReference Name="X"/>
+					<ParameterReference Name="Result"/>
+				</Block>
+				<Block>
+					<Mode>Atan2_ORG</Mode>
+					<Reference Type="VILib" Name="Atan2_ORG.vix"/>
+					<ParameterReference Name="Y"/>
+					<ParameterReference Name="X"/>
+					<ParameterReference Name="Result"/>
+				</Block>
+				<Block>
+					<Mode>QAR</Mode>
+					<Reference Type="VILib" Name="QAR.vix"/>
+					<ParameterReference Name="X"/>
+					<ParameterReference Name="Y"/>
+					<ParameterReference Name="Quotient"/>
+					<ParameterReference Name="Remainder"/>
+				</Block>
+			</Category>
+			<Category Name="AdvSen">
+				<Block>
+					<Mode>SensorName</Mode>
+					<Reference Type="VILib" Name="OFDL_SensorName.vix"/>
+					<ParameterReference Name="Port"/>
+					<ParameterReference Name="Name"/>
+				</Block>
+				<Block>
+					<Mode>SensorMode</Mode>
+					<Reference Type="VILib" Name="OFDL_SensorMode.vix"/>
+					<ParameterReference Name="Port"/>
+					<ParameterReference Name="Mode"/>
+					<ParameterReference Name="Name"/>
+				</Block>
+				<Block>
+					<Mode>MotorName</Mode>
+					<Reference Type="VILib" Name="OFDL_MotorName.vix"/>
+					<ParameterReference Name="MotorPort"/>
+					<ParameterReference Name="Name"/>
+				</Block>
+				<Block>
+					<Mode>MotorMode</Mode>
+					<Reference Type="VILib" Name="OFDL_MotorMode.vix"/>
+					<ParameterReference Name="MotorPort"/>
+					<ParameterReference Name="Mode"/>
+					<ParameterReference Name="Name"/>
+				</Block>
+			</Category>
+			<Category Name="AdvGyro">
+				<Block>
+					<Mode>TiltRate</Mode>
+					<Reference Type="VILib" Name="OFDL_GyroTiltRate.vix"/>
+					<ParameterReference Name="Port"/>
+					<ParameterReference Name="Rate"/>
+				</Block>
+				<Block>
+					<Mode>TiltAng</Mode>
+					<Reference Type="VILib" Name="OFDL_GyroTiltAng.vix"/>
+					<ParameterReference Name="Port"/>
+					<ParameterReference Name="Angle"/>
+				</Block>
+				<Block>
+					<Mode>GyroReset</Mode>
+					<Reference Type="VILib" Name="OFDL_GyroReset.vix"/>
+					<ParameterReference Name="Port"/>
+				</Block>
+			</Category>
+			<Category Name="AdvOps">
+				<Block>
+					<Mode>isFileExist</Mode>
+					<Reference Type="VILib" Name="OFDL_isFileExist.vix"/>
+					<ParameterReference Name="FileName"/>
+					<ParameterReference Name="LogicResult"/>
+				</Block>
+				<Block>
+					<Mode>strLength</Mode>
+					<Reference Type="VILib" Name="OFDL_strLength.vix"/>
+					<ParameterReference Name="InputStr"/>
+					<ParameterReference Name="Output"/>
+				</Block>
+			</Category>
+			<Block>
+				<Mode>Map</Mode>
+				<Reference Type="VILib" Name="Map.vix"/>
+				<ParameterReference Name="Input"/>
+				<ParameterReference Name="fromLow"/>
+				<ParameterReference Name="fromHigh"/>
+				<ParameterReference Name="toLow"/>
+				<ParameterReference Name="toHigh"/>
+				<ParameterReference Name="Result"/>
+			</Block>
+		</PolyGroup>
+	</PolyGroups>
 </EditorDefinitions>

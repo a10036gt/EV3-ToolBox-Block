@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Name" DataType="String" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" AdaptToDiagramType="true" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" xmlns:nidesigner="NationalInstruments.Designer" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480">
+                    <ation:TextBlock x:Name="Label2" nidesigner:Name="Label\ 2" Text="SensorName" Model0:DesignerNodeProperties.SnapTo="False" Visibility="Visible" ation:Canvas.Left="228.5" ation:Canvas.Top="35" Margin="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                        <fpruntime:BuddyReferenceProperties.BuddyProperties>
+                            <fpruntime:BuddyProperties BuddyReferences="" BuddyOwner="SensorName" BuddyOffset="0, -20" BuddyVisible="True" BuddyLocked="False" />
+                        </fpruntime:BuddyReferenceProperties.BuddyProperties>
+                    </ation:TextBlock>
+                </fpruntime:FrontPanelCanvas>
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <Comment Bounds="763 350 252 56" SizeMode="User" AttachStyle="Free">
+                    <Content>Reference TovisBlocks and add some new things.
+http://toviscsapat.hu/</Content>
+                </Comment>
+                <Wire Id="w7" Joints="N(n10:layer) N(n17:layer)" />
+                <Wire Id="w10" Joints="N(n8:Out) N(n17:length)" />
+                <MethodCall Id="n10" Bounds="798 252 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                    <Terminal Id="port" Direction="Input" Wire="w11" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="layer" Direction="Output" Wire="w7" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                    <Terminal Id="portOut" Direction="Output" Wire="w8" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                </MethodCall>
+                <MethodCall Id="n17" Bounds="931 252 28 42" Target="X3\.Lib:PBrickInputGetSensorName">
+                    <Terminal Id="layer" Direction="Input" Wire="w7" DataType="SByte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="port" Direction="Input" Wire="w8" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="length" Direction="Input" Wire="w10" DataType="SByte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="name" Direction="Output" Wire="w12" DataType="String" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Literal Id="n8" Terminals="Out=w10" Bounds="882 280 35 14" Interpretation="Exact" DataType="Byte">255</Literal>
+                <Wire Id="w8" Joints="N(n10:portOut) N(n17:port)" />
+                <DataAccessor DataItem="Port" Id="n9" Bounds="651 252 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w11" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w11" Joints="N(n9:Value) N(n10:port)" />
+                <DataAccessor DataItem="Name" Id="n11" Bounds="1022 252 70 14">
+                    <Terminal Id="String" Direction="Input" Wire="w12" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w12" Joints="N(n17:name) N(n11:String)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

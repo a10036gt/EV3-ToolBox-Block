@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
     <Namespace Name="Project">
-        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
-            <DataItem Name="True" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
-            <DataItem Name="False" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
+        <VirtualInstrument IsTopLevel="false" IsReentrant="true" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="True" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
+            <DataItem Name="False" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="2" />
             <DataItem Name="Result" DataType="Single" DefaultTerminalDirection="Input" CallUsage="Optional" CallDirection="Output" CallIndex="0" AdaptToDiagramType="true" />
-            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" />
-            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="4" />
-            <DataItem Name="Select" DataType="Boolean" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="False" />
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="3" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="3" />
+            <DataItem Name="Select" DataType="Boolean" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
             <FrontPanel>
-                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
-                <DataAccessor DataItem="True" Id="n1" Bounds="392 168 70 14">
+                <DataAccessor DataItem="True" Id="n1" Bounds="497 189 70 14">
                     <Terminal Id="Numeric" Direction="Output" Wire="w5" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <DataAccessor DataItem="False" Id="n2" Bounds="406 245 70 14">
+                <DataAccessor DataItem="False" Id="n2" Bounds="497 217 70 14">
                     <Terminal Id="Numeric" Direction="Output" Wire="w12" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <DataAccessor DataItem="Result" Id="n3" Bounds="707 217 70 14">
+                <DataAccessor DataItem="Result" Id="n3" Bounds="672 203 70 14">
                     <Terminal Id="Boolean" Direction="Input" Wire="w13" Hotspot="0 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <Wire Id="w5" Joints="N(n1:Numeric) h(84) v(21) N(n7:t)" />
+                <Wire Id="w5" Joints="N(n1:Numeric) N(n7:t)" />
                 <Select Id="n7" Terminals="s\?\ t\:f=w13, f=w12, s=w9, t=w5" TopLeft="609 189" />
-                <Wire Id="w12" Joints="N(n2:Numeric) h(7) v(-42) h(70) v(14) N(n7:f)" />
-                <Wire Id="w13" Joints="N(n7:s\?\ t\:f) h(63) v(14) N(n3:Boolean)" />
-                <DataAccessor DataItem="Select" Id="n8" Bounds="441 196 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w9" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                <Wire Id="w12" Joints="N(n2:Numeric) N(n7:f)" />
+                <Wire Id="w13" Joints="N(n7:s\?\ t\:f) N(n3:Boolean)" />
+                <Wire Id="w9" Joints="N(n9:Numeric) N(n7:s)" />
+                <DataAccessor DataItem="Select" Id="n9" Bounds="497 203 70 14">
+                    <Terminal Id="Numeric" Direction="Output" Wire="w9" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <Wire Id="w9" Joints="N(n8:Value) h(70) v(7) N(n7:s)" />
             </BlockDiagram>
             <Icon>
-                <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="70" Width="56">
+                <Model:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="56" Width="56">
                     <fpruntime:AnimationProperties.Animations>
                         <fpruntime:AnimationsContainer />
                     </fpruntime:AnimationProperties.Animations>
                     <fpruntime:EventProperties.Events>
                         <fpruntime:EventContainer />
                     </fpruntime:EventProperties.Events>
-                    <Model0:IconPanel.Background>
+                    <Model:IconPanel.Background>
                         <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <ation:LinearGradientBrush.Transform>
                                 <ation:MatrixTransform />
@@ -50,7 +50,7 @@
                             <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
                             <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
                         </ation:LinearGradientBrush>
-                    </Model0:IconPanel.Background>
+                    </Model:IconPanel.Background>
                     <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 13, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
                         <fpruntime:AnimationProperties.Animations>
                             <fpruntime:AnimationsContainer />
@@ -87,7 +87,7 @@
                             <fpruntime:EventContainer />
                         </fpruntime:EventProperties.Events>
                     </ation:TextBlock>
-                </Model0:IconPanel>
+                </Model:IconPanel>
             </Icon>
         </VirtualInstrument>
     </Namespace>
